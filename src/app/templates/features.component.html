@@ -1,0 +1,144 @@
+<!-- Section One: Features -->
+
+
+<div class="container">
+  <div class="row">
+    <div class="offset-sm-1 col-sm-10 shadow-box">
+      <div class="section-header mini-headers">
+        <div class="row">
+          <div class="col-12">
+            <label class="switch">
+              <input type="checkbox" [(ngModel)]="isCompany" ng-change="Check();">
+              <span class="slider round">
+              </span>
+              <div class="row">
+                <div class="col-12">
+                  <div class="slider-text">
+                    <h3 class="float-left slider-one"> {{BoatOwner}}</h3>
+                    <h3 class="float-right slider-two">{{ServiceProvider}}</h3>
+
+                  </div>
+                </div>
+              </div>
+            </label>
+
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-4">
+            <a [ngx-scroll-to]="'#amazingfeatures'">
+              <h5>{{About}}</h5>
+            </a>
+          </div>
+          <div class="col-4">
+            <!-- <a [ngx-scroll-to]="'#aboutus'">
+              <h5>Blog</h5>
+            </a> -->
+          </div> 
+          <div class="col-4">
+            <a [ngx-scroll-to]="'#howitworks'">
+              <h5>{{Contact}}</h5>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row" id="amazingfeatures">
+
+    <div class="row section-bottom" *ngIf="!isCompany">
+      <div class="col-sm-12 section-header">
+        <h2>{{About}}</h2>
+      </div>
+      <div class="offset-sm-2 col-sm-8 subsection-header">
+        <p>{{Boat_About}}</p>
+      </div>
+      <div class="col-md-4">
+        <div class="row desc-sections">
+          <div class="col-2 col-md-3">
+            <img src="assets/img/computer.png" alt="custom" class="section-icons">
+          </div>
+          <div class="col-10 col-md-9">
+            <h6> {{Boat_Head_AboutFeature1}}</h6>
+            <p>{{Boat_Detail_AboutFeature1}} </p>
+          </div>
+        </div>
+        <div class="row desc-sections">
+          <div class="col-2 col-md-3">
+            <img src="assets/img/magnifyingglass.png" alt="time" class="section-icons">
+          </div>
+          <div class="col-10 col-md-9">
+            <h6>{{Boat_Head_AboutFeature2}}</h6>
+            <p>{{Boat_Detail_AboutFeature2}}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 my-auto features-images">
+        <img [src]="(isCompany) ? 'assets/img/laptop.png' : 'assets/Images/Iphone-login.png'" alt="Laptop" class="feature-image">
+      </div>
+      <div class="col-md-4">
+        <div class="row desc-sections">
+          <div class="col-2 col-md-3">
+            <img src="assets/img/checkmark.png" alt="profile" class="section-icons">
+          </div>
+          <div class="col-10 col-sm-8 col-md-9">
+            <h6>{{Boat_Head_AboutFeature3}}</h6>
+            <p>{{Boat_Detail_AboutFeature3}}</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="row section-bottom" *ngIf="isCompany">
+      <div class="col-sm-12 section-header">
+        <h2>{{About}}</h2>
+      </div>
+      <div class="offset-sm-2 col-sm-8 subsection-header">
+        <p>{{Service_About}}</p>
+      </div>
+      <div class="col-md-4">
+        <div class="row desc-sections">
+          <div class="col-2 col-md-3">
+            <img src="assets/img/computer.png" alt="custom" class="section-icons">
+          </div>
+          <div class="col-10 col-md-9">
+            <h6>{{Service_Head_AboutFeature1}}</h6>
+            <p>{{Service_Detail_AboutFeature1}} </p>
+          </div>
+        </div>
+        <div class="row desc-sections">
+          <div class="col-2 col-md-3">
+            <img src="assets/img/flying.png" alt="time" class="section-icons">
+          </div>
+          <div class="col-10 col-md-9">
+            <h6>{{Service_Head_AboutFeature2}} </h6>
+            <p>{{Service_Detail_AboutFeature2}} </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 my-auto features-images">
+        <img [src]="(isCompany) ? 'assets/img/laptop.png' : 'assets/Images/Iphone-login.png'" alt="Laptop" class="feature-image">
+      </div>
+      <div class="col-md-4">
+        <div class="row desc-sections">
+          <div class="col-2 col-md-3">
+            <img src="assets/img/tools.png" alt="profile" class="section-icons">
+          </div>
+          <div class="col-10 col-sm-8 col-md-9">
+            <h6>{{Service_Head_AboutFeature3}} </h6>
+            <p>{{Service_Detail_AboutFeature3}}  </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div> <!-- /container -->
+
+
+<!-- /<app-about [isCompany]="isCompany"></app-about>-->
+<app-work [isCompany]="isCompany"></app-work>

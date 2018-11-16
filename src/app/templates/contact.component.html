@@ -1,0 +1,90 @@
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 section-header">
+        <h2>{{GetInTouch}} </h2>
+      </div>
+      <div class="offset-sm-2 col-sm-8 subsection-header">
+        <p>{{GetInTouchText}} </p>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="col-md-7 bottom-form my-auto">
+        <div class="container mt-3 p-3">
+
+          <form method="POST" action="send" name="ContactForm" [formGroup]="ContactForm" (ngSubmit)="onSubmit(ContactForm.value); myForm.resetForm()"
+            #myForm="ngForm" class="form mb-5">
+            <div class="form-field input-full-width form-group">
+              <input placeholder={{Name}} type="text" formControlName="name" required class="form-control">
+              <div class="text-danger input-error">
+                <span *ngIf="ContactForm?.controls.name?.touched && ContactForm?.controls.name?.errors?.required">{{NameError1}}
+                </span>
+                <span *ngIf="ContactForm?.controls.name?.errors?.minlength">{{NameError2}}</span>
+              </div>
+            </div>
+
+            <div class="form-field input-full-width form-group">
+              <input placeholder="{{Email}}" type="text" formControlName="email" required class="form-control">
+              <div class="text-danger input-error">
+                <span *ngIf="ContactForm?.controls.email?.touched && ContactForm?.controls.email?.errors?.required">{{EmailError1}}
+                </span>
+                <span *ngIf="ContactForm?.controls.email?.errors?.pattern">{{EmailError2}}
+                </span>
+              </div>
+            </div>
+
+            <div class="form-field input-full-width form-group">
+              <textarea type="text" placeholder={{Message}} formControlName="message" required class="form-control"></textarea>
+              <div class="text-danger input-error">
+                <span *ngIf="ContactForm?.controls.message?.touched && ContactForm?.controls.message?.errors?.required">{{MessageError1}}
+                </span>
+                <span *ngIf="ContactForm?.controls.message?.errors?.minlength">
+                  {{MessageError2}}!</span>
+              </div>
+            </div>
+
+            <button type="submit" [disabled]="!ContactForm.valid" class="btn btn-message" (click)="openDialog()"> <img
+                src="../assets/Images/send-icon.png" alt="First slide"> {{SendButton}} </button>
+          </form>
+
+        </div>
+      </div>
+      <div class="col-md-5 offset-lg-1 col-lg-4 offset-xl-2 col-xl-3 top-image">
+        <img src="assets/img/phone.png" alt="Hand" class="feature-image">
+      </div>
+    </div>
+
+
+  </div>
+
+<div class="full-width-footer">
+  <div class="container">
+    <footer>
+      <div class="row">
+        <div class="col-md-5 float-left footer">
+          <span class="space"> {{Telephone}} : {{TelephoneNubmer}} </span>
+          <br>
+          <span class="space">{{Timings}} : {{TelephoneTimings}} </span>
+          <br>
+          <span class="space">{{Email}} : {{ContactEmail}} </span>
+        </div>
+       
+        <div class="col-md-5 footer">
+            <a class="space footer-center" href="#">{{TandC}}</a>
+            <br>
+            <span class="space">&copy; {{CopyRights}}</span>
+          
+         </div>
+        <div class="col-md-2 footer">
+            <span class="float-right"><a href="#"><img src="assets/img/fb.png" alt="Hand" class="footer-icon"></a>
+             <a href="#"><img src="assets/img/linkedin.png" alt="Hand" class="footer-icon"></a>
+           </span>
+ 
+         </div>
+       
+      </div>
+      
+    
+    </footer>
+  </div>
+</div>

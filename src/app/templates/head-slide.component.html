@@ -1,0 +1,54 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+            <a class="navbar-brand logo-box" href="#"><img src="assets/img/logo-white.png" alt="Hand" class="logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" [collapse]="isCollapsed">
+          <ul class="navbar-nav mr-auto">
+          </ul>
+          <div class="form-inline my-2 my-lg-0">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" [href]="companyPanel">{{LogIn}}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">{{DownloadNJORD}}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+</nav>
+
+<carousel>
+  <slide *ngFor="let slide of slidersData" class="container  container-box  col-xs-12 col-sm-12 col-md-12 ">
+    <div class="jumbotron top-header">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 offset-md-1 col-md-4 my-auto top-text">
+                  <h2>{{Introduce}} <span class="bold">{{NJORD}}.</span></h2>
+                  <!-- <h2>{{slide.tittle1}</h2> -->
+                  <h4>{{tittle2}}</h4>
+                  <p><span class="arrow-yellow"> > </span> {{par1}}</p>
+                  <p><span class="arrow-yellow"> > </span> {{par2}}</p>
+                  <p><span class="arrow-yellow"> > </span> {{par3}}</p>
+                    <div class="row">
+                      <div class="col-6">
+                        <a class="logo-box" href="#"><img src="assets/img/gplay.png" alt="Google Play" class="logo"></a>
+                      </div>
+                      <div class="col-6">
+                        <a class="logo-box" href="#"><img src="assets/img/appstore.png" alt="Apple Store" class="logo"></a>
+                      </div>
+                    </div>
+              </div>
+              <div class="col-12 col-md-6 offset-lg-1 col-lg-5 top-image">
+                <img src="assets/img/hand.png" alt="Hand" class="hand">
+              </div>
+            </div>
+          </div>
+        </div>
+  </slide>
+</carousel>

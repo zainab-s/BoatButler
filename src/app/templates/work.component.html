@@ -1,0 +1,27 @@
+<!-- Section Three: How it Works -->
+<div class="full-width">
+<div class="container" id="howitworks">
+  <div class="row">
+    <div class="col-sm-12 section-header">
+      <h2>{{Contact}}</h2>
+    </div>
+  </div>
+  <div class="row section-bottom">
+    <div class="col-sm-5">
+      <p>{{ContactText1}}</p>
+      <a class="btn btn-main" href="https://podio.com/webforms/21779976/1519426" role="button">{{ContactButton}}</a>
+    </div>
+    <div class="col-sm-7 howitworks-images">
+      <img src="assets/img/rightside.png" alt="Hand" class="feature-image" *ngIf="isCompany">
+      <img src="assets/Images/app-sign.png" *ngIf="!isCompany">
+      <img src="assets/Images/app-boat.png" *ngIf="!isCompany">
+      <img src="assets/Images/app-services.png" *ngIf="!isCompany">
+      <!-- <section class="mt-5">
+      <img src="{{workSlide[0].img1}}" alt="First slide" >
+      <img src="{{workSlide[0].img2}}" alt="First slide" >
+      <img src="{{workSlide[0].img3}}" alt="First slide" >
+      </section> -->
+    </div>
+  </div>
+</div>
+</div>
